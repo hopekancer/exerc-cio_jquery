@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Tarefas</title>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            #lista a {
+                text-decoration: none;
+                color: inherit; /* Mantém a cor do texto igual ao restante da lista */
+            }
+            
+            #lista a.riscado {
+                text-decoration: line-through;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form action="" id="form">
+            <input type="text" name="" id="input-tarefa" required placeholder="Adicione uma Tarefa">
+            <button type="submit" id="btn-adicionar">Adicionar</button>
+        </form>
+        <ul id="lista">
+            <!---
+            <li>
+                <p>Tarefa 1</p>
+            </li>
+            -->
+        </ul>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="./main.js"></script>
+    </body>
+    </html>
