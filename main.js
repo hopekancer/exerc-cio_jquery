@@ -15,7 +15,7 @@ const novoItem = $(`<li style="display: none;"></li>`)
 
     lista.on('click', 'li a', function(e) {
         e.preventDefault(); // Evita que o link redirecione
-        $(`li a`).toggleClass('riscado'); // Alterna a classe 'riscado'
+        $(this).toggleClass('riscado'); // Alterna a classe 'riscado'
     });
     
 })
