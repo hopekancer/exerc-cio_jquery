@@ -1,21 +1,52 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-let inputTarefaValue = ``
-const lista = $(`#lista`)
-const novoItem = $(`<li style="display: none;"></li>`)
-
-    $(`form`).on(`submit`, function(e) {
-        e.preventDefault()
-        inputTarefaValue = $(`#input-tarefa`).val()
-        $(`<li>
-            <a href="#">${inputTarefaValue}</a>
-        </li>`).appendTo(lista)
-        $(`#input-tarefa`).val(``)
+    $('#carousel-images').slick({
+        autoplay: true,
+        arrows: false
     })
 
-    lista.on('click', 'li a', function(e) {
-        e.preventDefault(); // Evita que o link redirecione
-        $(this).toggleClass('riscado'); // Alterna a classe 'riscado'
-    });
+
+    $('#telefone').mask('(00) 0 0000-0000', {
+        placeholder: '(DDD) 1 2345-6789'
+    })
     
+    $('#cpf').mask('000.000.000-00', {
+        placeholder: '123.456.789-00'
+    })
+    
+    $('#cep').mask('00.000-000', {
+        placeholder: '01.2345-678'
+    })
+    
+    $('form').validate({
+        rules: {
+            nome: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            telefone: {
+                required: true
+            },
+            endereco: {
+                required: true
+            },
+            cep: {
+                required: true
+            },
+            cpf: {
+                required: true
+            },
+        },
+        submitHandler: function (form) {
+            alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
+            form.reset();
+        },
+        invalidHandler: function (form, validator) {
+            alert("Por favor, preencha os campos para prosseguir com a compra!");
+        }
+    })
 })
+
